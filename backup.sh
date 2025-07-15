@@ -10,3 +10,5 @@ ENCRYPT=false
 # Parse arguments
 while [[ "$#" -gt 0 ]]; do
   case $1 in
+    -d|--destination) DESTINATION="$2"; shift ;;
+    -f|--formats) FORMATS="$2"; shift ;;
