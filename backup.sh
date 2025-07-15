@@ -12,3 +12,6 @@ while [[ "$#" -gt 0 ]]; do
   case $1 in
     -d|--destination) DESTINATION="$2"; shift ;;
     -f|--formats) FORMATS="$2"; shift ;;
+    -r|--retention) RETENTION_DAYS="$2"; shift ;;
+    --dry-run) DRY_RUN=true ;;
+    --encrypt) ENCRYPT=true ;;
