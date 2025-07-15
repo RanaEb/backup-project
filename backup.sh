@@ -5,3 +5,6 @@ CONFIG_FILE="backup.conf"
 LOG_FILE="backup.log"
 RETENTION_DAYS=7
 DRY_RUN=false
+ENCRYPT=false
+
+# Parse arguments
