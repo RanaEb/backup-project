@@ -47,3 +47,6 @@ FILES_TO_BACKUP=()
 # Convert comma-separated formats to space-separated array
 FORMATS_ARR=(${FORMATS//,/ })
 for dir in "${SOURCES[@]}"; do
+  for ext in "${FORMATS_ARR[@]}"; do
+    if [[ -d "$dir" ]]; then
+      found_files=$(find "$dir" -type f -name "*.$ext")
