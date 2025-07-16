@@ -62,3 +62,4 @@ if [[ ${#FILES_TO_BACKUP[@]} -eq 0 ]]; then
   echo "No files found to backup."
   exit 0
 fi
+START_TIME=$(date +%s)
