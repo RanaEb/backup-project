@@ -42,3 +42,5 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
   echo "Config file $CONFIG_FILE not found!"
   exit 1
 fi
+readarray -t SOURCES < "$CONFIG_FILE"
+FILES_TO_BACKUP=()
