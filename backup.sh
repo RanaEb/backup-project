@@ -64,3 +64,5 @@ if [[ ${#FILES_TO_BACKUP[@]} -eq 0 ]]; then
 fi
 START_TIME=$(date +%s)
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+ARCHIVE_NAME="backup_$TIMESTAMP.tar.gz"
+ARCHIVE_PATH="$DESTINATION/$ARCHIVE_NAME"
