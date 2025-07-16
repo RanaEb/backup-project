@@ -44,3 +44,5 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
 fi
 readarray -t SOURCES < "$CONFIG_FILE"
 FILES_TO_BACKUP=()
+# Convert comma-separated formats to space-separated array
+FORMATS_ARR=(${FORMATS//,/ })
