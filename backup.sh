@@ -81,3 +81,6 @@ END_TIME=$(date +%s)
 DURATION=$((END_TIME - START_TIME))
 SIZE=$(du -sh "$ARCHIVE_PATH" | cut -f1)
 echo "$(date): Backup created: $ARCHIVE_NAME | Size: $SIZE | Duration: ${DURATION}s" >> "$LOG_FILE"
+echo "Backup completed: $ARCHIVE_NAME"
+echo "Size: $SIZE"
+echo "Duration: ${DURATION} seconds"
