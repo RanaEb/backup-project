@@ -77,3 +77,5 @@ if [[ $? -ne 0 ]]; then
   echo "Backup failed!"
   exit 1
 fi
+END_TIME=$(date +%s)
+DURATION=$((END_TIME - START_TIME))
