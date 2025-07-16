@@ -37,3 +37,8 @@ if [[ ! -d "$DESTINATION" ]]; then
   echo "Destination directory does not exist: $DESTINATION"
   exit 1
 fi
+# Read source directories from config file
+if [[ ! -f "$CONFIG_FILE" ]]; then
+  echo "Config file $CONFIG_FILE not found!"
+  exit 1
+fi
