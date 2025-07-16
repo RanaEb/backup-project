@@ -46,3 +46,4 @@ readarray -t SOURCES < "$CONFIG_FILE"
 FILES_TO_BACKUP=()
 # Convert comma-separated formats to space-separated array
 FORMATS_ARR=(${FORMATS//,/ })
+for dir in "${SOURCES[@]}"; do
