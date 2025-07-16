@@ -79,3 +79,4 @@ if [[ $? -ne 0 ]]; then
 fi
 END_TIME=$(date +%s)
 DURATION=$((END_TIME - START_TIME))
+SIZE=$(du -sh "$ARCHIVE_PATH" | cut -f1)
