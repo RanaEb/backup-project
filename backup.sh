@@ -53,3 +53,8 @@ for dir in "${SOURCES[@]}"; do
       for file in $found_files; do
         FILES_TO_BACKUP+=("$file")
       done
+    else
+      echo "Warning: Source directory does not exist: $dir"
+    fi
+  done
+done
