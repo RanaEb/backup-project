@@ -63,3 +63,4 @@ if [[ ${#FILES_TO_BACKUP[@]} -eq 0 ]]; then
   exit 0
 fi
 START_TIME=$(date +%s)
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
