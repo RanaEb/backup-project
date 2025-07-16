@@ -32,3 +32,8 @@ if [[ -z "$DESTINATION" ]] || [[ -z "$FORMATS" ]]; then
   echo "Usage: $0 -d <backup_dir> -f <extensions> [-r <retention_days>] [--dry-run] [--encrypt]"
   exit 1
 fi
+# Check if destination directory exists
+if [[ ! -d "$DESTINATION" ]]; then
+  echo "Destination directory does not exist: $DESTINATION"
+  exit 1
+fi
