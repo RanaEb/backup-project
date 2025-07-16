@@ -58,3 +58,7 @@ for dir in "${SOURCES[@]}"; do
     fi
   done
 done
+if [[ ${#FILES_TO_BACKUP[@]} -eq 0 ]]; then
+  echo "No files found to backup."
+  exit 0
+fi
