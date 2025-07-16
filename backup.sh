@@ -50,3 +50,6 @@ for dir in "${SOURCES[@]}"; do
   for ext in "${FORMATS_ARR[@]}"; do
     if [[ -d "$dir" ]]; then
       found_files=$(find "$dir" -type f -name "*.$ext")
+      for file in $found_files; do
+        FILES_TO_BACKUP+=("$file")
+      done
