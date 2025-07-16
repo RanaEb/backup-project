@@ -71,3 +71,9 @@ if [ "$DRY_RUN" = true ]; then
   printf "%s\n" "${FILES_TO_BACKUP[@]}"
   exit 0
 fi
+echo "Creating backup archive..."
+tar -czf "$ARCHIVE_PATH" "${FILES_TO_BACKUP[@]}"
+if [[ $? -ne 0 ]]; then
+  echo "Backup failed!"
+  exit 1
+fi
