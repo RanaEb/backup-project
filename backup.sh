@@ -66,3 +66,8 @@ START_TIME=$(date +%s)
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 ARCHIVE_NAME="backup_$TIMESTAMP.tar.gz"
 ARCHIVE_PATH="$DESTINATION/$ARCHIVE_NAME"
+if [ "$DRY_RUN" = true ]; then
+  echo "DRY RUN: The following files would be backed up:"
+  printf "%s\n" "${FILES_TO_BACKUP[@]}"
+  exit 0
+fi
