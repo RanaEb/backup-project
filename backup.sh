@@ -106,3 +106,10 @@ if [ -n "$EMAIL" ]; then
   echo "Backup $ARCHIVE_NAME completed successfully." | mail -s "Backup Report" "$EMAIL"
 fi
 
+EMAIL="ereyhaneh7@gmail.com"
+
+if [[ $? -eq 0 ]]; then
+  echo "Backup $ARCHIVE_NAME completed successfully at $(date)" | mail -s "Backup Report - Success" "$EMAIL"
+else
+  echo "Backup $ARCHIVE_NAME failed at $(date)" | mail -s "Backup Report - Failure" "$EMAIL"
+fi
