@@ -30,3 +30,16 @@ DEST_DIR="/home/reyhaneheb/backups"
 FILE_TYPES="txt,pdf,docx"
 ENCRYPTION_ENABLED=false
 RETENTION_DAYS=7
+## ⏰ Scheduling Automatic Backups with Cron
+
+You can automate daily or weekly backups using a cron job.
+
+### 📌 Steps:
+
+1. Open the crontab editor:
+
+```bash
+crontab -e
+Add the following line to run the script daily at 2 AM:
+0 2 * * * /home/reyhaneheb/backup-project/backup.sh -d /home/reyhaneheb/backups -f txt,pdf -r 7 --encrypt
+Save and close the editor
