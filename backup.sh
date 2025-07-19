@@ -89,3 +89,15 @@ if [[ -n "$deleted" ]]; then
   echo "$(date): Deleted old backups:" >> "$LOG_FILE"
   echo "$deleted" >> "$LOG_FILE"
 fi
+if [ "$ENCRYPT" = true ]; then
+  echo "Encrypting backup..."
+  gpg -c --batch --yes --passphrase "YourStrongPassword" "$ARCHIVE_PATH"
+  if [[ $? -eq 0 ]]; then
+    rm "$ARCHIVE_PATH"
+    ARCHIVE_PATH="$ARCHIVE_PATH.gpg"
+    echo "$(date): Backup encrypted to $ARCHIVE_PATH" >> "$LOG_FILE"
+  else
+    echo "Encryption failed!"
+    exit 1
+  fi
+fi
