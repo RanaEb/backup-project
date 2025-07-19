@@ -85,3 +85,7 @@ echo "Backup completed: $ARCHIVE_NAME"
 echo "Size: $SIZE"
 echo "Duration: ${DURATION} seconds"
 deleted=$(find "$DESTINATION" -type f -name "backup_*.tar.gz" -mtime +$RETENTION_DAYS -print -exec rm {} \;)
+if [[ -n "$deleted" ]]; then
+  echo "$(date): Deleted old backups:" >> "$LOG_FILE"
+  echo "$deleted" >> "$LOG_FILE"
+fi
