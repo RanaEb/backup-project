@@ -137,6 +137,24 @@ echo "$(date): Backup created: $ARCHIVE_NAME | Size: $SIZE | Duration: ${DURATIO
 echo "Backup completed: $ARCHIVE_NAME"
 echo "Size: $SIZE"
 echo "Duration: ${DURATION} seconds"
+
+
+# Encrypt the archive if ENCRYPT=true
+if [ "$ENCRYPT" = true ]; then
+  read -s -p "Enter encryption password: " ENC_PASS
+  echo
+  echo "Encrypting backup..."
+  gpg -c --batch --yes --passphrase "$ENC_PASS" "$ARCHIVE_PATH"
+  if [[ $? -eq 0 ]]; then
+    rm "$ARCHIVE_PATH"
+    ARCHIVE_PATH="$ARCHIVE_PATH.gpg"
+    echo "$(date): Backup encrypted to $ARCHIVE_PATH" >> "$LOG_FILE"
+  else
+    echo "Encryption failed!"
+    exit 1
+  fi
+fi
+# Delete backups older than retention days
 deleted=$(find "$DESTINATION" -type f -name "backup_*.tar.gz" -mtime +$RETENTION_DAYS -print -exec rm {} \;)
 if [[ -n "$deleted" ]]; then
   echo "$(date): Deleted old backups:" >> "$LOG_FILE"
