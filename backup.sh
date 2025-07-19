@@ -84,3 +84,4 @@ echo "$(date): Backup created: $ARCHIVE_NAME | Size: $SIZE | Duration: ${DURATIO
 echo "Backup completed: $ARCHIVE_NAME"
 echo "Size: $SIZE"
 echo "Duration: ${DURATION} seconds"
+deleted=$(find "$DESTINATION" -type f -name "backup_*.tar.gz" -mtime +$RETENTION_DAYS -print -exec rm {} \;)
