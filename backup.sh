@@ -113,7 +113,7 @@ if [ "$ENCRYPT" = true ]; then
     exit 1
   fi
 fi
-EMAIL="your@email.com"
+EMAIL="ereyhaneh7@gmail.com"
 
 if [ -n "$EMAIL" ]; then
   echo "Backup $ARCHIVE_NAME completed successfully." | mail -s "Backup Report" "$EMAIL"
