@@ -101,3 +101,5 @@ if [ "$ENCRYPT" = true ]; then
     exit 1
   fi
 fi
+EMAIL="ereyhaneh7@gmail.com"
+
