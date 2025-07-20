@@ -141,7 +141,7 @@ if [ "$ENCRYPT" = true ]; then
 fi
 
 # === Optional Email Notification (if mail is installed) ===
-EMAIL="your@email.com"
+EMAIL="ereyhaneh7@gmail.com"
 if [ -n "$EMAIL" ]; then
   echo "Backup $ARCHIVE_NAME completed successfully." | mail -s "Backup Report" "$EMAIL"
 fi
